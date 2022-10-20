@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'app/view/www',
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
 });

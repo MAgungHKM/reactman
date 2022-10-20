@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of webman.
  *
@@ -14,8 +15,4 @@
 
 use Webman\Route;
 
-
-
-
-
-
+Route::get('/{path}', [\app\controller\IndexController::class, "index"]);
