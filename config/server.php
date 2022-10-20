@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of webman.
  *
@@ -12,8 +13,14 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+$port = getenv("APP_PORT");
+$host = "http://0.0.0.0:{$port}";
+if (strlen($port) == 0) {
+    $host = "http://0.0.0.0:8787";
+}
+
 return [
-    'listen' => 'http://0.0.0.0:8787',
+    'listen' => $host,
     'transport' => 'tcp',
     'context' => [],
     'name' => 'webman',
