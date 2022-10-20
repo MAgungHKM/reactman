@@ -1,27 +1,25 @@
 {
-  "name": "workerman/webman",
+  "name": "magunghkm/reactman",
   "type": "project",
   "keywords": [
-    "high performance",
-    "http service"
+    "php webman",
+    "react ts"
   ],
-  "homepage": "https://www.workerman.net",
-  "license": "MIT",
-  "description": "High performance HTTP Service Framework.",
+  "homepage": "https://github.com/MAgungHKM/reactman",
+  "description": "PHP Webman with React view boilerplate.",
   "authors": [
     {
-      "name": "walkor",
-      "email": "walkor@workerman.net",
-      "homepage": "https://www.workerman.net",
+      "name": "magunghkm",
+      "homepage": "https://github.com/MAgungHKM/reactman",
       "role": "Developer"
     }
   ],
   "support": {
     "email": "walkor@workerman.net",
-    "issues": "https://github.com/walkor/webman/issues",
+    "issues": "https://github.com/MAgungHKM/reactman/issues",
     "forum": "https://wenda.workerman.net/",
     "wiki": "https://workerman.net/doc/webman",
-    "source": "https://github.com/walkor/webman"
+    "source": "https://github.com/MAgungHKM/reactman"
   },
   "require": {
     "php": ">=7.2",
