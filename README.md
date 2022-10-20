@@ -1,16 +1,45 @@
-# webman
+# reactman
 
-High performance HTTP Service Framework for PHP based on [Workerman](https://github.com/walkor/workerman).
+High performance PHP [workerman/webman](https://github.com/walkor/webman) with TypeScript [react](https://github.com/facebook/react) as its ui framework and for the bundler, we use the lightning fast [vite](https://github.com/vitejs/vite).
 
-# Manual
+<br>
 
-https://www.workerman.net/doc/webman
+# Getting Started
 
-# Benchmarks
+Install the required packages & libraries with the following command:
+```
+$ composer install
 
-https://www.techempower.com/benchmarks/#section=test&runid=9716e3cd-9e53-433c-b6c5-d2c48c9593c1&hw=ph&test=db&l=zg24n3-1r&a=2
-![image](https://user-images.githubusercontent.com/6073368/96447814-120fc980-1245-11eb-938d-6ea408716c72.png)
 
-## LICENSE
+$ npm install
+// or you could use pnpm
+$ pnpm install
+```
 
-MIT
+Run the command below to start the php server:
+```
+php start.php
+```
+
+And finally run this command to start watching changes from react ui:
+```
+npm run watch
+// or you could use pnpm
+pnpm watch
+```
+
+<br>
+
+# Deploying to Production
+
+### Using Docker
+
+Modify Dockerfile as you see fit.<br>
+Run the following command to create docker image:
+```
+docker build --tag <your-project-name> .
+```
+Run the next command to run the image:
+```
+docker run --name <your-project-name> --publish <your-host-port>:<APP_PORT> <your-project-name>
+```
