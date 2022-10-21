@@ -30,6 +30,28 @@ $ pnpm watch
 
 <br>
 
+# Project Structure
+
+```
+.
+├── app             # Webman Main Folder with your usual MVC pattern
+│   ├── controller   
+│   ├── middleware   
+│   ├── model        
+│   └── view         
+│       └── www     # Bundled version of React from "views" directory and also the actual "public" path
+├── config          # Configuration for Webman
+├── node_modules    # Installed NPM packages
+├── process         # Webman boilerplate
+├── public          # Temporary "public" directory, will be processed later by vite
+├── runtime         # Webman boilerplate
+├── support         # Webman boilerplate
+├── vendor          # Installed Composer packages
+└── views           # React Main Folder, edit your UI here
+```
+
+<br>
+
 # Deploying to Production
 
 ### Using Docker
