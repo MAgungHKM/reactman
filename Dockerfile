@@ -33,14 +33,40 @@ RUN rm -rf views && \
 
 # continue stage build with the desired image and copy the source including the
 # dependencies downloaded by composer
-FROM jorge07/alpine-php:8.0 AS runner
+FROM trafex/php-nginx:2.5.0 AS runner
 
-WORKDIR /app
+ARG APP_TZ
+ARG APP_PORT
 
-COPY --from=composer /composer /app
+WORKDIR /web
 
+COPY --from=composer /composer /web
+COPY --from=composer /composer/webman.nginx.conf /etc/nginx/conf.d/default.conf.template 
+COPY --from=composer /composer/webman.supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+USER root
 RUN apk update &&\
-  apk add --no-cache php8-posix
+  # Packages
+  apk add -U --no-cache \
+  php8-posix \
+  php8-pcntl \
+  tzdata \
+  openrc \
+  lsof \
+  gettext \
+  && \
+  # clear cache
+  rm -rf /var/cache/apk/* 
 
-# CMD [ "php", "start.php", "start", "-d" ]
-# CMD [ "php", "start.php", "start" ]s
+ENV TZ=${APP_TZ:-"UTC"}
+RUN ln -fs "/usr/share/zoneinfo/${TZ}" /etc/localtime && \
+  echo "${TZ}" >  /etc/timezone
+
+ENV APP_PORT=${APP_PORT:-"8787"}
+RUN envsubst '\$APP_PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
+
+RUN chown -R nobody:nobody /web
+RUN chmod -R 755 /web
+USER nobody
+
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
