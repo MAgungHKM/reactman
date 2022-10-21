@@ -1,6 +1,10 @@
 # reactman
 
-High performance PHP [workerman/webman](https://github.com/walkor/webman) with TypeScript [react](https://github.com/facebook/react) as its ui framework, and for the bundler, we use the lightning fast [vite](https://github.com/vitejs/vite).
+High performance PHP [**workerman/webman**](https://github.com/walkor/webman) with TypeScript [**react**](https://github.com/facebook/react) as its ui framework, and for the bundler, we use the lightning fast [**vite**](https://github.com/vitejs/vite).
+
+### Versions
+
+This boilerplate uses **PHP**  `^7.2`, **Webman** `1.4.9`, **Node.js** `^16`, **TypeScript** `4.8.4`, **React** `18.2.0`, **React Router** `6.4.2`, **Vite** `3.1.8`
 
 <br>
 
