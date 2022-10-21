@@ -61,19 +61,18 @@ $ pnpm watch
 ### Using Docker
 
 Modify Dockerfile as you see fit.<br>
-Run the following command to create docker image:
+Run the following command to create docker image while passing everything in `.env` as build-arg:
 ```
-$ docker build --tag <your-project-name> .
+$ docker build --tag <your-project-name> \
+    $(for i in `cat .env`; do out+="--build-arg $i " ; done; echo $out;out="") \
+    .
 ```
 Run the next command to run the image:
 ```
 $ docker run --name <your-project-name> \
-    --publish <your-host-port>:<APP_PORT> \
+    --publish <your-host-port>:80 \
     --tty \
     --detach \
-    <your-project-name> \
-    tail -f /dev/null \
-  && \
-  docker exec <your-project-name> php /app/start.php start -d
+    <your-project-name>
 ```
 ###### *Not really the best way to use docker container because we are missing docker healthcheck, but this is the only way to use production mode AFAIK.
