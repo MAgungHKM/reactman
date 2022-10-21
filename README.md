@@ -18,14 +18,14 @@ $ pnpm install
 
 Run the command below to start the php server:
 ```
-php start.php
+$ php start.php
 ```
 
 And finally run this command to start watching changes from react ui:
 ```
-npm run watch
+$ npm run watch
 // or you could use pnpm
-pnpm watch
+$ pnpm watch
 ```
 
 <br>
@@ -37,10 +37,17 @@ pnpm watch
 Modify Dockerfile as you see fit.<br>
 Run the following command to create docker image:
 ```
-docker build --tag <your-project-name> .
+$ docker build --tag <your-project-name> .
 ```
 Run the next command to run the image:
 ```
-docker run --name <your-project-name> --publish <your-host-port>:<APP_PORT> --tty --detach <your-project-name> tail -f /dev/null && docker exec <your-project-name> php /app/start.php start -d
+$ docker run --name <your-project-name> \
+    --publish <your-host-port>:<APP_PORT> \
+    --tty \
+    --detach \
+    <your-project-name> \
+    tail -f /dev/null \
+  && \
+  docker exec <your-project-name> php /app/start.php start -d
 ```
 ###### *Not really the best way to use docker container because we are missing docker healthcheck, but this is the only way to use production mode AFAIK.
