@@ -75,4 +75,4 @@ $ docker run --name <your-project-name> \
     --detach \
     <your-project-name>
 ```
-###### *Not really the best way to use docker container because we are missing docker healthcheck, but this is the only way to use production mode AFAIK.
+
