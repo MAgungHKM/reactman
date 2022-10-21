@@ -1,6 +1,6 @@
 # reactman
 
-High performance PHP [workerman/webman](https://github.com/walkor/webman) with TypeScript [react](https://github.com/facebook/react) as its ui framework and for the bundler, we use the lightning fast [vite](https://github.com/vitejs/vite).
+High performance PHP [workerman/webman](https://github.com/walkor/webman) with TypeScript [react](https://github.com/facebook/react) as its ui framework, and for the bundler, we use the lightning fast [vite](https://github.com/vitejs/vite).
 
 <br>
 
