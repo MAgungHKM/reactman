@@ -42,4 +42,6 @@ docker build --tag <your-project-name> .
 Run the next command to run the image:
 ```
 docker run --name <your-project-name> --publish <your-host-port>:<APP_PORT> <your-project-name>
+docker run --name <your-project-name> --publish <your-host-port>:<APP_PORT> --tty --detach <your-project-name> tail -f /dev/null && docker exec <your-project-name> php /app/start.php start -d
 ```
+*Not really the best way to use docker container because we are missing docker healthcheck, but this is the only way to use production mode AFAIK.

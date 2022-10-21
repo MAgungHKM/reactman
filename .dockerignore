@@ -1,0 +1,21 @@
+# Files
+.dockerignore
+.editorconfig
+.gitignore
+.env.*
+Dockerfile
+Makefile
+LICENSE
+**/*.md
+**/*_test.go
+*.out
+
+
+# Folders
+.git/
+.github/
+build/% %                                                                                                     
+node_modules
+build
+app/views/www
+vendor
